@@ -392,6 +392,14 @@ OR
 ALTER TABLE public.minutesleep_merged
 RENAME COLUMN "date" TO "Date"
 
+
+# Analyze
+
+
+
+
+
+
 # Act
 ## Recommendations
 
