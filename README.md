@@ -157,7 +157,7 @@ CREATE TABLE weightLogInfo_merged (
 ## Checking for NULL or Blank values
 
 ``` SQL
-SELECT * FROM dailyactivity_merged 
+SELECT * FROM public.dailyactivity_merged 
 WHERE 
 "Id" IS NULL OR "Id" = ' '
 OR
@@ -239,6 +239,11 @@ UPDATE public.dailyactivity_merged
 Recalculating the total distance column
 
 ``` SQL
+
+SELECT *, "LightlyActiveDistanceKm" + "ModeratelyActiveDistanceKm" + "VeryActiveDistanceKm" + "SedentaryDistanceKm" AS "TotalDistanceCheck"
+FROM public.dailyactivity_merged
+;	
+
 UPDATE public.dailyactivity_merged
 	SET 
 	"TotalDistanceKm" = "LightlyActiveDistanceKm" + "ModeratelyActiveDistanceKm" + "VeryActiveDistanceKm" + "SedentaryDistanceKm";
