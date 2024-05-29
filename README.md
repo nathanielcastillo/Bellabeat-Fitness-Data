@@ -154,7 +154,98 @@ CREATE TABLE weightLogInfo_merged (
 	);	
 ```
 
+## Checking for NULL or Blank values
+
+``` SQL
+SELECT * FROM dailyactivity_merged 
+WHERE 
+"Id" IS NULL OR "Id" = ' '
+OR
+"ActivityDate" IS NULL OR "ActivityDate" = ' '
+OR
+"TotalSteps" IS NULL OR "TotalSteps" = ' '
+OR
+"TotalDistance" IS NULL OR "TotalDistance" = ' '
+OR
+"TrackerDistance" IS NULL OR "TrackerDistance" = ' '
+OR
+"LoggedActivitiesDistance" IS NULL OR "LoggedActivitiesDistance" = ' '
+OR
+"VeryActiveDistance" IS NULL OR "VeryActiveDistance" = ' '
+OR
+"ModeratelyActiveDistance" IS NULL OR "ModeratelyActiveDistance" = ' '
+OR
+"LightActiveDistance" IS NULL OR "LightActiveDistance" = ' '
+OR
+"SedentaryActiveDistance" IS NULL OR "SedentaryActiveDistance" = ' '
+OR
+"VeryActiveMinute" IS NULL OR "VeryActiveMinute" = ' '
+OR
+"FairlyActiveMinutes" IS NULL OR "FairlyActiveMinutes" = ' '
+OR
+"LightlyActiveMinutes" IS NULL OR "LightlyActiveMinutes" = ' '
+OR
+"SedentaryMinutes" IS NULL OR "SedentaryMinutes" = ' '
+OR
+"Calories" IS NULL OR "Calories" = ' '
+;
 ```
+
+Renaming Columns to add units of measure standardize
+
+``` SQL
+ALTER TABLE public.dailyactivity_merged
+RENAME COLUMN "TotalDistance" TO "TotalDistanceKm"
+;
+ALTER TABLE public.dailyactivity_merged
+RENAME COLUMN "TrackerDistance" TO "TrackerDistanceKm"
+;
+ALTER TABLE public.dailyactivity_merged
+RENAME COLUMN "LoggedActivitiesDistance" TO "LoggedActivitiesDistanceKm" 
+;
+ALTER TABLE public.dailyactivity_merged
+RENAME COLUMN "VeryActiveDistance" TO "VeryActiveDistanceKm" 
+;
+ALTER TABLE public.dailyactivity_merged
+RENAME COLUMN "ModeratelyActiveDistance" TO "ModeratelyActiveDistanceKm" 
+;
+ALTER TABLE public.dailyactivity_merged
+RENAME COLUMN "LightActiveDistance" TO "LightlyActiveDistanceKm"
+;
+ALTER TABLE public.dailyactivity_merged
+RENAME COLUMN "SedentaryActiveDistance" TO "SedentaryDistanceKm"
+;
+ALTER TABLE public.dailyactivity_merged
+RENAME COLUMN "VeryActiveMinute" TO "VeryActiveMinutes"
+;
+ALTER TABLE public.dailyactivity_merged
+RENAME COLUMN "FairlyActiveMinutes" TO "ModeratelyActiveMinutes"
+;
+```
+
+Adding a Total Minutes Columns 
+
+``` SQL
+ALTER TABLE public.dailyactivity_merged
+ADD COLUMN "TotalMinutes" INT 
+;
+
+UPDATE public.dailyactivity_merged
+	SET 
+	"TotalMinutes" = "VeryActiveMinutes" + "ModeratelyActiveMinutes" + "LightlyActiveMinutes" + "SedentaryMinutes"
+;
+```
+
+Recalculating the total distance column
+
+``` SQL
+UPDATE public.dailyactivity_merged
+	SET 
+	"TotalDistanceKm" = "LightlyActiveDistanceKm" + "ModeratelyActiveDistanceKm" + "VeryActiveDistanceKm" + "SedentaryDistanceKm";
+```
+
+
+
 # Analyze & Share
 
 The Data has been analyzed and visualized in Tableau  
