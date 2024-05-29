@@ -366,7 +366,29 @@ ALTER TABLE public.minutesleep_merged
 RENAME COLUMN "logId" TO "SleeplogId"
 ;
 ```
+```SQL
+SELECT * FROM public.weightloginfo_merged
+WHERE 
+"Id" IS NULL
+OR
+"Date" IS NULL
+OR
+"WeightKg" IS NULL 
+OR
+"WeightPounds" IS NULL
+OR
+"Fat" IS NULL 
+OR
+"BMI" IS NULL 
+OR
+"IsManualReport" IS NULL 
+OR
+"LogId" IS NULL
+;
+```
 
+ALTER TABLE public.minutesleep_merged
+RENAME COLUMN "date" TO "Date"
 
 
 The Data has been analyzed and visualized in Tableau  
