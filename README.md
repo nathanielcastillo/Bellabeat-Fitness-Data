@@ -5,6 +5,11 @@
 THE APPASA method
 
 ### [Ask](#ask)
+Prepare  
+Process  
+Analyze  
+Share  
+Act  
 
 # Introduction
 
