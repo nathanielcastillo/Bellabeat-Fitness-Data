@@ -194,31 +194,31 @@ OR
 Renaming Columns to add units of measure standardize
 
 ``` SQL
-ALTER TABLE public.dailyactivity_merged
+ALTER TABLE dailyactivity_merged
 RENAME COLUMN "TotalDistance" TO "TotalDistanceKm"
 ;
-ALTER TABLE public.dailyactivity_merged
+ALTER TABLE dailyactivity_merged
 RENAME COLUMN "TrackerDistance" TO "TrackerDistanceKm"
 ;
-ALTER TABLE public.dailyactivity_merged
+ALTER TABLE dailyactivity_merged
 RENAME COLUMN "LoggedActivitiesDistance" TO "LoggedActivitiesDistanceKm" 
 ;
-ALTER TABLE public.dailyactivity_merged
+ALTER TABLE dailyactivity_merged
 RENAME COLUMN "VeryActiveDistance" TO "VeryActiveDistanceKm" 
 ;
-ALTER TABLE public.dailyactivity_merged
+ALTER TABLE dailyactivity_merged
 RENAME COLUMN "ModeratelyActiveDistance" TO "ModeratelyActiveDistanceKm" 
 ;
-ALTER TABLE public.dailyactivity_merged
+ALTER TABLE dailyactivity_merged
 RENAME COLUMN "LightActiveDistance" TO "LightlyActiveDistanceKm"
 ;
-ALTER TABLE public.dailyactivity_merged
+ALTER TABLE dailyactivity_merged
 RENAME COLUMN "SedentaryActiveDistance" TO "SedentaryDistanceKm"
 ;
-ALTER TABLE public.dailyactivity_merged
+ALTER TABLE dailyactivity_merged
 RENAME COLUMN "VeryActiveMinute" TO "VeryActiveMinutes"
 ;
-ALTER TABLE public.dailyactivity_merged
+ALTER TABLE dailyactivity_merged
 RENAME COLUMN "FairlyActiveMinutes" TO "ModeratelyActiveMinutes"
 ;
 ```
@@ -226,11 +226,11 @@ RENAME COLUMN "FairlyActiveMinutes" TO "ModeratelyActiveMinutes"
 Adding a Total Minutes Columns 
 
 ``` SQL
-ALTER TABLE public.dailyactivity_merged
+ALTER TABLE dailyactivity_merged
 ADD COLUMN "TotalMinutes" INT 
 ;
 
-UPDATE public.dailyactivity_merged
+UPDATE dailyactivity_merged
 	SET 
 	"TotalMinutes" = "VeryActiveMinutes" + "ModeratelyActiveMinutes" + "LightlyActiveMinutes" + "SedentaryMinutes"
 ;
@@ -241,10 +241,10 @@ Recalculating the total distance column
 ``` SQL
 
 SELECT *, "LightlyActiveDistanceKm" + "ModeratelyActiveDistanceKm" + "VeryActiveDistanceKm" + "SedentaryDistanceKm" AS "TotalDistanceCheck"
-FROM public.dailyactivity_merged
+FROM dailyactivity_merged
 ;	
 
-UPDATE public.dailyactivity_merged
+UPDATE dailyactivity_merged
 	SET 
 	"TotalDistanceKm" = "LightlyActiveDistanceKm" + "ModeratelyActiveDistanceKm" + "VeryActiveDistanceKm" + "SedentaryDistanceKm";
 ```
@@ -344,7 +344,7 @@ OR
 ```
 
 ```SQL
-SELECT * FROM public.minutesleep_merged
+SELECT * FROM minutesleep_merged
 WHERE 
 "Id" IS NULL 
 OR
@@ -356,18 +356,18 @@ OR
 ;
 ```
 ```SQL
-ALTER TABLE public.minutesleep_merged
+ALTER TABLE minutesleep_merged
 RENAME COLUMN "date" TO "Date"
 ;
-ALTER TABLE public.minutesleep_merged
+ALTER TABLE minutesleep_merged
 RENAME COLUMN "value" TO "SleepMinutes"
 ;
-ALTER TABLE public.minutesleep_merged
+ALTER TABLE minutesleep_merged
 RENAME COLUMN "logId" TO "SleeplogId"
 ;
 ```
 ```SQL
-SELECT * FROM public.weightloginfo_merged
+SELECT * FROM weightloginfo_merged
 WHERE 
 "Id" IS NULL
 OR
