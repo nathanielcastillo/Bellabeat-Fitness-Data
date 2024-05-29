@@ -395,9 +395,8 @@ RENAME COLUMN "date" TO "Date"
 
 # Analyze
 
-
-
-
+![
+](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Active%20Minutes%20Percentage.png)
 
 
 # Act
