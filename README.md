@@ -67,210 +67,93 @@ The code used will be documented below
 
 ### Creating Tables
 
+``` SQL
+CREATE TABLE dailyActivity_merged (
+    "Id" BIGINT,
+    "ActivityDate" TIMESTAMP,
+    "TotalSteps" INT,
+    "TotalDistance" NUMERIC,
+    "TrackerDistance" NUMERIC,
+    "LoggedActivitiesDistance" NUMERIC,
+    "VeryActiveDistance" NUMERIC,
+    "ModeratelyActiveDistance" NUMERIC,
+    "LightActiveDistance" NUMERIC,
+    "SedentaryActiveDistance" NUMERIC,
+    "VeryActiveMinute" INT,
+    "FairlyActiveMinutes" INT,
+    "LightlyActiveMinutes" INT,
+    "SedentaryMinutes" INT,
+    "Calories" INT
+);
 
-### Deleting rows with NULL or blank values
-Several station names are blank and cannot be identified even when using coordinate information
+CREATE TABLE heartrate_seconds_merged (
+    "Id" BIGINT,
+    "Time" TIMESTAMP,
+    "Value" INT
+);
 
-``` MySQL
-DELETE 
-FROM 2023_ride_data
-WHERE 
-ride_id = '' OR ride_id IS NULL
-OR
-rideable_type = '' OR rideable_type IS NULL
-OR
-started_at = '' OR started_at IS NULL
-OR
-ended_at = '' OR ended_at IS NULL
-OR
-start_station_name = '' OR start_station_name IS NULL
-OR
-start_station_id = '' OR start_station_id IS NULL
-OR
-end_station_name = '' OR end_station_name IS NULL
-OR
-end_station_id = '' OR end_station_id IS NULL
-OR
-start_lat = '' OR start_lat IS NULL
-OR
-start_lng = '' OR start_lng IS NULL
-OR
-end_lat = '' OR end_lat  IS NULL
-OR
-end_lng = '' OR end_lng IS NULL
-OR
-member_casual = '' OR member_casual IS NULL
-;
-```
-* 1388170 rows deleted   
-* New 2023_ride_data total - 4331707 rows 
+CREATE TABLE hourlyCalories_merged (
+	"Id" BIGINT,
+	"ActivityHour" TIMESTAMP,
+	"Calories" INT
+);
 
-### Cleaning Station names
-Station Name variations lead to unnecessary station duplicates
-``` MySQL
-UPDATE 2023_ride_data
-SET 
-    start_station_name = REPLACE(start_station_name, 'Public Rack - ', ''),
-    start_station_name = REPLACE(start_station_name, ' (Temp)', ''),
-    start_station_name = REPLACE(start_station_name, '*', ''),
-    start_station_name = REPLACE(start_station_name, '/', ' & '),
-    start_station_name = REPLACE(start_station_name, 'Buckingham - Fountain', 'Buckingham Fountain'),
-    start_station_name = REPLACE(start_station_name, 'Senka "Edward Duke"" Park"', 'Senka "Edward Duke" Park'),
-    
-    end_station_name = REPLACE(end_station_name, 'Public Rack - ', ''),
-    end_station_name = REPLACE(end_station_name, ' (Temp)', ''),
-    end_station_name = REPLACE(end_station_name, '*', ''),
-    end_station_name = REPLACE(end_station_name, '/', ' & '),
-    end_station_name = REPLACE(end_station_name, 'Buckingham - Fountain', 'Buckingham Fountain'),
-    end_station_name = REPLACE(end_station_name, 'Senka "Edward Duke"" Park"', 'Senka "Edward Duke" Park')
-;
-```
-* 151158 rows affected  
-* Did not delete rows so table total remains same
+CREATE TABLE hourlyIntensities_merged (
+	"Id" BIGINT,
+	"ActivityHour" TIMESTAMP,
+	"TotalIntensity" NUMERIC,
+    "AverageIntensity" NUMERIC
+);
 
-### Deleting rides with "Test" in Station names
-"Test" rides will be deleted   
-``` MySQL
-DELETE 
-FROM 2023_ride_data
-WHERE start_station_name LIKE "%Test%" OR end_station_name LIKE "%Test%"
-;
-```
-* 15 rows deleted  
-* New 2023_ride_data total - 4331692 rows
+CREATE TABLE hourlySteps_merged (
+	"Id" BIGINT,
+	"ActivityHour" TIMESTAMP,
+	"StepTotal" INT
+);
 
-### Setting ride_id column to 16 characters
-Standardizng Ride IDs
-``` MySQL
-UPDATE 2023_ride_data
-SET ride_id = LEFT(ride_id, 16);
-```
-* 484 rows affected
-* Did not delete rows so table total remains same
- 
-### Trimming all columns
+CREATE TABLE minuteCaloriesNarrow_merged (
+	"Id" BIGINT,
+	"ActivityMinute" TIMESTAMP,
+	"Calories" NUMERIC
+);
 
-``` MySQL
-UPDATE 2023_ride_data
-SET
-ride_id = TRIM(ride_id),
-rideable_type = TRIM(rideable_type),
-started_at = TRIM(started_at),
-ended_at = TRIM(ended_at),
-start_station_name = TRIM(start_station_name),
-start_station_id = TRIM(start_station_id),
-end_station_name = TRIM(end_station_name),
-end_station_id = TRIM(end_station_id),
-start_lat = TRIM(start_lat),
-start_lng = TRIM(start_lng),
-end_lat = TRIM(end_lat),
-end_lng = TRIM(end_lng),
-member_casual = TRIM(member_casual)
-;
-```
-* 257 rows affected
-* Did not delete rows so table total remains same
+CREATE TABLE minuteIntensitiesNarrow_merged (
+	"Id" BIGINT,
+	"ActivityMinute" TIMESTAMP,
+	"Intensity" NUMERIC
+);
 
-### Dropping start_station_id and end_station_id columns
-Station ID columns are not useful or necessary
+CREATE TABLE minuteMETsNarrow_merged (
+	"Id" BIGINT,
+	"ActivityMinute" TIMESTAMP,
+	"METs" INT
+);
 
-``` MySQL
-ALTER TABLE 2023_ride_data
-DROP COLUMN start_station_id,
-DROP COLUMN end_station_id
-;
+CREATE TABLE minuteSleep_merged (
+	"Id" BIGINT,
+	"date" TIMESTAMP,
+	"value" INT,
+	"logId" BIGINT
+	);
+
+CREATE TABLE minuteStepsNarrow_merged (
+	"Id" BIGINT,
+	"ActivityMinute" TIMESTAMP,
+	"Steps" INT
+	);
+
+CREATE TABLE weightLogInfo_merged (
+	"Id" BIGINT,
+	"Date" TIMESTAMP,
+	"WeightKg" NUMERIC,
+	"WeightPounds" NUMERIC,
+	"Fat" INT,	
+	"BMI" NUMERIC,	
+	"IsManualReport" VARCHAR(255),
+	"LogId" BIGINT
+	);	
 ```
 
-### Creating Temporary Table with Window function to add row number to duplicates
-Window function and temporary table is used over subqueries to optimize performance
-Window function will assign row numbers to entries to determine if duplicate entries exist  
-The first ride entry prioritizing member rides will marked with row number 1  
-Any duplicate entry will be marked with a row number > 1  
-Result is stored in temporary table for later use  
-
-```MySQL
-DROP TABLE IF EXISTS member_row;
-CREATE TEMPORARY TABLE member_row
-SELECT 
-            ride_id, rideable_type, started_at, ended_at, start_station_name, end_station_name, start_lat, start_lng, end_lat, end_lng, member_casual,
-            ROW_NUMBER() OVER (PARTITION BY ride_id, rideable_type, started_at, ended_at, start_station_name, end_station_name ORDER BY member_casual DESC) AS row_num
-FROM 2023_ride_data
-ORDER BY ride_id
-;
-```
-* member_row - temporary table created with 4331692 rows
-
-### "Deleting" duplicates prioritzing member rides
-We are only importing where row num = 1   
-If duplicate entries exists, they are "deleted" by filtering out row numbers != 1 using the previous temporary table  
-
-```MySQL
-TRUNCATE TABLE 2023_ride_data; 
-INSERT INTO 2023_ride_data  
-SELECT ride_id, rideable_type, started_at, ended_at, start_station_name, end_station_name, start_lat, start_lng, end_lat, end_lng, member_casual
-FROM member_row
-WHERE row_num = 1
-ORDER BY ride_id
-;
-```
-* New 2023_ride_data total - 4331692 (No duplicates)
-
-### Deleting rides with trip durations over 1 day or negative ride duration  
-Likely technical errors or extreme outliers so they are deleted
-```MySQL
-DELETE
-FROM 2023_ride_data
-WHERE TIMESTAMPDIFF (YEAR, started_at, ended_at) > 0
-OR TIMESTAMPDIFF (MONTH, started_at, ended_at) > 0
-OR TIMESTAMPDIFF (DAY, started_at, ended_at) > 0
-OR TIMESTAMPDIFF (MINUTE, started_at, ended_at) < 0
-;
-```
-* 167 rows deleted
-* New 2023_ride_data total - 4331525 rows
-  
-### Deleting rides with same start and end station and ride_durations under 1 minute 
-If these conditions are met then it is mostly likely a test or accident so they are deleted
-```MySQL
-DELETE
-FROM 2023_ride_data
-WHERE start_station_name = end_station_name AND TIMESTAMPDIFF (MINUTE, started_at, ended_at) < 1
-ORDER BY ride_id
-;
-```
-* 84179 rows deleted
-* New 2023_ride_data total - 4247346 rows
-
-## Additions 
-Now that the data have been cleaned, two columns are added for analysis
-
-### Adding column route
-To analyze popular start station + end station combination
-```MySQL
-ALTER TABLE 2023_ride_data
-ADD COLUMN ride_route VARCHAR(255) AS (CONCAT(start_station_name, ' - ', end_station_name))
-;
-```
-### Adding column trip duration
-To analyze trip duration in minutes
-```MySQL
-ALTER TABLE 2023_ride_data
-ADD COLUMN ride_duration_min INT AS (TIMESTAMPDIFF(MINUTE, started_at, ended_at))
-;
-```
-## Export
-Exporting Table into CSV as 2023_ride_data_export.csv for further analysis in Tableau  
-SELECT INTO OUTFILE is used to acheive best performance    
-Filepath is dependent on where file will be stored    
-
-```MySQL
-SELECT 'ride_id', 'rideable_type', 'started_at', 'ended_at', 'start_station_name', 'end_station_name', 'start_lat', 'start_lng', 'end_lat', 'end_lng', 'member_casual', 'ride_route', 'ride_duration_min'
-UNION ALL
-SELECT 'ride_id', 'rideable_type', 'started_at', 'ended_at', 'start_station_name', 'end_station_name', 'start_lat', 'start_lng', 'end_lat', 'end_lng', 'member_casual', 'ride_route', 'ride_duration_min'
-INTO OUTFILE '/Users/MySQL Import_Export/2023_ride_data_export.csv'
-FIELDS TERMINATED BY ','
-LINES TERMINATED BY '\n'
-FROM 2023_ride_data;
 ```
 # Analyze & Share
 
