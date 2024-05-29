@@ -4,15 +4,13 @@
 
 THE APPASA method
 
+### [Ask](#1-ask)
+
 # Introduction
-
-Bellabeat is a high-tech manufacturer of health-focused products for women. Bellabeat is a small company, but they have potential to become a larger player in the global smart device market. The CEO believes that analyzing smart device fitness data could help umlock new growth oppurtunites for the company.
-
-You have been asked to focus on one of Bellabeat’s products and analyze small device data to gain insight into how consumers are using their small devices. The insights you discover will then help guide marketing strategy for the company. You will present your analysis to the Bellabeat executive team along with your high-level recommendations for Bellabeat’s marketing strategy.
 
 You are a junior data analyst working on the marketing analyst team at Bellabeat, a high-tech manufacturer of health-focused products for women. Bellabeat is a successful small company, but they have the potential to become a larger player in the global small device market. Urška Sršen, cofounder and Chief Creative Ocer of Bellabeat, believes that analyzing small device fitness data could help unlock new growth opportunities for the company. You have been asked to focus on one of Bellabeat’s products and analyze small device data to gain insight into how consumers are using their small devices. The insights you discover will then help guide marketing strategy for the company. You will present your analysis to the Bellabeat executive team along with your high-level recommendations for Bellabeat’s marketing strategy. 
 
-# Ask
+## 1. Ask
 ### Main Business Task
 
 * Analyze trends in smart device usage. 
@@ -39,11 +37,11 @@ Data does not fully pass the ROCC method
 
 The sample size is too small
 
-- [ ] Reliable - High Sample Size, over 5 million rows of data    
-- [x] Original - Public Dataset provided by Motivate International Inc. 
-- [x] Comprehensive - 5 million rows with 13 columns of relevant data
-- [x] Current - Data is from 2023
-- [x] Cited - Motivate International Inc.
+- [ ] Reliable - Low Sample Size,   
+- [x] Original - 
+- [x] Comprehensive - 
+- [x] Current - 
+- [x] Cited - 
 
 The 11 CSVs of data will be used
 
@@ -62,8 +60,7 @@ weightLogInfo_merged.csv
 # Process
 ### Data Cleaning Tools
 
-Data cleaning will be done in PostgreSQL
-The code used will be documented below  
+PostgreSQL will be used for data cleaning
 
 ### Creating Tables
 
