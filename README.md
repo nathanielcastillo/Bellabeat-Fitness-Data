@@ -1,6 +1,9 @@
-# Cyclistic-Ride-Data
+# Bellabeat-Fitness-Data
 
 ## A Data Analysis Case Study using Excel, SQL and Tableau
+
+THE APPASSA method
+
 
 The process and code used is documented within this README.md  
 
@@ -44,21 +47,18 @@ You are a junior data analyst working on the marketing analyst team at Bellabeat
 # Prepare
 ### Data Source
 
-Data is downloaded from https://divvy-tripdata.s3.amazonaws.com/index.html
+Data is downloaded from https://www.kaggle.com/datasets/arashnic/fitbit
+Fitness data is spread out across 11 different CSVs
 
-Trip data is organized into 1 CSV file per month for a total of 12 CSVs for the year 2023
+Data does not fully pass the ROCC method
 
-Data deemed as credible and passes ROCCC method
+The sample size is too small
 
-- [x] Reliable - High Sample Size, over 5 million rows of data    
+- [ ] Reliable - High Sample Size, over 5 million rows of data    
 - [x] Original - Public Dataset provided by Motivate International Inc. 
 - [x] Comprehensive - 5 million rows with 13 columns of relevant data
 - [x] Current - Data is from 2023
 - [x] Cited - Motivate International Inc.
-
-Note that data-privacy issues prevent access from rider's personally identifiable information.
-Only individual ride information is collected, information about the riders themselves is not.
-Therefore, unable to determine things like if casual riders live within Cyclistic service areas or if they purchased multiple single passes.
 
 Data needs to be cleaned before further analysis due to data quality issues such as null values.
 
@@ -82,32 +82,11 @@ Total - 5719877 rows of data
 # Process
 ### Data Cleaning Tools
 
-Data cleaning will be done in MySQL as there are a total of over 5.7 million rows of data which is too much for Microsoft Excel to process efficiently  
+Data cleaning will be done in PostgreSQL
 The code used will be documented below  
 
-### Creating Master Table
-This will hold all the data from the 12 CSVs as 2023_ride_data
+### Creating Tables
 
-``` MySQL
-DROP TABLE IF EXISTS 2023_ride_data;
-CREATE TABLE 2023_ride_data
-(
-  ride_id VARCHAR(255),
-  rideable_type VARCHAR(255),
-  started_at VARCHAR(255),
-  ended_at VARCHAR(255),
-  start_station_name VARCHAR(255),
-  start_station_id VARCHAR(255),
-  end_station_name VARCHAR(255),
-  end_station_id VARCHAR(255),
-  start_lat VARCHAR(255),
-  start_lng VARCHAR(255),
-  end_lat VARCHAR(255),
-  end_lng VARCHAR(255),
-  member_casual VARCHAR(255)
-)
-;
-```
 ### Column Overview
 
 ride_id - Alphanumerical ID given to the rides  
