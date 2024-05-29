@@ -2,22 +2,7 @@
 
 ## A Data Analysis Case Study using Excel, SQL and Tableau
 
-THE APPASSA method
-
-
-The process and code used is documented within this README.md  
-
-Attached are a .sql file containing the code and a PowerPoint presentation  
-
-The raw data files used can be downloaded from https://divvy-tripdata.s3.amazonaws.com/index.html as they are too large to be attached  
-
-Links to Tableau visualizations
-
-[2023 Cyclistic Ride Data Story 
-](https://public.tableau.com/views/2023CyclisticRideDataStory/RideDataStory?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
-
-[2023 Cyclistic Ride Data Dashboard
-](https://public.tableau.com/views/2023CyclisticRideDataDashboard/RideDataDashboard?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
+THE APPASA method
 
 # Introduction
 
@@ -60,24 +45,19 @@ The sample size is too small
 - [x] Current - Data is from 2023
 - [x] Cited - Motivate International Inc.
 
-Data needs to be cleaned before further analysis due to data quality issues such as null values.
+The 11 CSVs of data will be used
 
-The 12 CSVs of data will be used
-
-202301-divvy-tripdata.csv - 190301 rows of data  
-202302-divvy-tripdata.csv - 190445 rows of data   
-202303-divvy-tripdata.csv - 258678 rows of data  
-202304-divvy-tripdata.csv - 426590 rows of data  
-202305-divvy-tripdata.csv - 604827 rows of data  
-202306-divvy-tripdata.csv - 719618 rows of data  
-202307-divvy-tripdata.csv - 767650 rows of data  
-202308-divvy-tripdata.csv - 771693 rows of data  
-202309-divvy-tripdata.csv - 666371 rows of data  
-202310-divvy-tripdata.csv - 537113 rows of data  
-202311-divvy-tripdata.csv - 362518 rows of data  
-202312-divvy-tripdata.csv - 224073 rows of data
-
-Total - 5719877 rows of data
+dailyActivity_merged.csv 
+heartrate_seconds_merged.csv 
+hourlyCalories_merged.csv 
+hourlyIntensities_merged.csv 
+hourlySteps.csv_merged 
+minuteCaloriesNarrow.csv_merged 
+minuteIntensititesNarrow.csv_merged 
+minutesMETsNarrow_merged 
+minuteSleep_merged   
+minuteStepsNarrow_merged.csv 
+weightLogInfo_merged.csv 
 
 # Process
 ### Data Cleaning Tools
@@ -87,101 +67,6 @@ The code used will be documented below
 
 ### Creating Tables
 
-### Column Overview
-
-ride_id - Alphanumerical ID given to the rides  
-rideable_type - What kind of bicycle was used? Classic, electric, docked    
-start_at - Timestamp for when the ride started  
-ended_at - Timestamp for when the ride ended  
-start_station_name - Name of station where ride started  
-start_station_id - Alphanumeric ID given to the stations  
-end_station_name - Name of station where ride ended  
-end_station_id - Alphanumeric ID given to the stations  
-start_lat - Latitude coordinates for where the ride started   
-start_lng - Longitude coordinates for where the ride started  
-end_lat - Latitude coordinates for where the ride ended  
-end_lng - Latitude coordinates for where the ride ended  
-member_casual - Type of ride. Member or Casual  
-
-### Loading data into Master Table
-LOAD DATA INFILE is used to achieve best performance   
-File path is dependent on where file is stored
-
-``` MySQL
-LOAD DATA INFILE '/Users/MySQL Import_Export/Trip Data Formatted/202301-divvy-tripdata.csv'
-INTO TABLE 2023_ride_data
-FIELDS TERMINATED BY ',' ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS; -- Skip the header row if present
-;
-LOAD DATA INFILE '/Users/MySQL Import_Export/Trip Data Formatted/202302-divvy-tripdata.csv'
-INTO TABLE 2023_ride_data
-FIELDS TERMINATED BY ',' ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS; -- Skip the header row if present
-;
-LOAD DATA INFILE '/Users/MySQL Import_Export/Trip Data Formatted/202303-divvy-tripdata.csv'
-INTO TABLE 2023_ride_data
-FIELDS TERMINATED BY ',' ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS; -- Skip the header row if present
-;
-LOAD DATA INFILE '/Users/MySQL Import_Export/Trip Data Formatted/202304-divvy-tripdata.csv'
-INTO TABLE 2023_ride_data
-FIELDS TERMINATED BY ',' ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS; -- Skip the header row if present
-;
-LOAD DATA INFILE '/Users/MySQL Import_Export/Trip Data Formatted/202305-divvy-tripdata.csv'
-INTO TABLE 2023_ride_data
-FIELDS TERMINATED BY ',' ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS; -- Skip the header row if present
-;
-LOAD DATA INFILE '/Users/MySQL Import_Export/Trip Data Formatted/202306-divvy-tripdata.csv'
-INTO TABLE 2023_ride_data
-FIELDS TERMINATED BY ',' ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS; -- Skip the header row if present
-;
-LOAD DATA INFILE '/Users/MySQL Import_Export/Trip Data Formatted/202307-divvy-tripdata.csv'
-INTO TABLE 2023_ride_data
-FIELDS TERMINATED BY ',' ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS; -- Skip the header row if present
-;
-LOAD DATA INFILE '/Users/MySQL Import_Export/Trip Data Formatted/202308-divvy-tripdata.csv'
-INTO TABLE 2023_ride_data
-FIELDS TERMINATED BY ',' ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS; -- Skip the header row if present
-;
-LOAD DATA INFILE '/Users/MySQL Import_Export/Trip Data Formatted/202309-divvy-tripdata.csv'
-INTO TABLE 2023_ride_data
-FIELDS TERMINATED BY ',' ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS; -- Skip the header row if present
-;
-LOAD DATA INFILE '/Users/MySQL Import_Export/Trip Data Formatted/202310-divvy-tripdata.csv'
-INTO TABLE 2023_ride_data
-FIELDS TERMINATED BY ',' ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS; -- Skip the header row if present
-;
-LOAD DATA INFILE '/Users/MySQL Import_Export/Trip Data Formatted/202311-divvy-tripdata.csv'
-INTO TABLE 2023_ride_data
-FIELDS TERMINATED BY ',' ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS; -- Skip the header row if present
-;
-LOAD DATA INFILE '/Users/MySQL Import_Export/Trip Data Formatted/202312-divvy-tripdata.csv'
-INTO TABLE 2023_ride_data
-FIELDS TERMINATED BY ',' ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS; -- Skip the header row if present
-;
-```
-* 2023_ride_data - 5719877 rows imported
 
 ### Deleting rows with NULL or blank values
 Several station names are blank and cannot be identified even when using coordinate information
