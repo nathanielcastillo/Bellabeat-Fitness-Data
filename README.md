@@ -157,37 +157,37 @@ CREATE TABLE weightLogInfo_merged (
 ## Checking for NULL or Blank values
 
 ``` SQL
-SELECT * FROM public.dailyactivity_merged 
+SELECT * FROM dailyactivity_merged 
 WHERE 
-"Id" IS NULL OR "Id" = ' '
+"Id" IS NULL
 OR
-"ActivityDate" IS NULL OR "ActivityDate" = ' '
+"ActivityDate" IS NULL
 OR
-"TotalSteps" IS NULL OR "TotalSteps" = ' '
+"TotalSteps" IS NULL
 OR
-"TotalDistance" IS NULL OR "TotalDistance" = ' '
+"TotalDistance" IS NULL
 OR
-"TrackerDistance" IS NULL OR "TrackerDistance" = ' '
+"TrackerDistance" IS NULL
 OR
-"LoggedActivitiesDistance" IS NULL OR "LoggedActivitiesDistance" = ' '
+"LoggedActivitiesDistance" IS NULL
 OR
-"VeryActiveDistance" IS NULL OR "VeryActiveDistance" = ' '
+"VeryActiveDistance" IS NULL
 OR
-"ModeratelyActiveDistance" IS NULL OR "ModeratelyActiveDistance" = ' '
+"ModeratelyActiveDistance" IS NULL
 OR
-"LightActiveDistance" IS NULL OR "LightActiveDistance" = ' '
+"LightActiveDistance" IS NULL
 OR
-"SedentaryActiveDistance" IS NULL OR "SedentaryActiveDistance" = ' '
+"SedentaryActiveDistance" IS NULL 
 OR
-"VeryActiveMinute" IS NULL OR "VeryActiveMinute" = ' '
+"VeryActiveMinute" IS NULL 
 OR
-"FairlyActiveMinutes" IS NULL OR "FairlyActiveMinutes" = ' '
+"FairlyActiveMinutes" IS NULL 
 OR
-"LightlyActiveMinutes" IS NULL OR "LightlyActiveMinutes" = ' '
+"LightlyActiveMinutes" IS NULL
 OR
-"SedentaryMinutes" IS NULL OR "SedentaryMinutes" = ' '
+"SedentaryMinutes" IS NULL
 OR
-"Calories" IS NULL OR "Calories" = ' '
+"Calories" IS NULL
 ;
 ```
 
@@ -249,9 +249,100 @@ UPDATE public.dailyactivity_merged
 	"TotalDistanceKm" = "LightlyActiveDistanceKm" + "ModeratelyActiveDistanceKm" + "VeryActiveDistanceKm" + "SedentaryDistanceKm";
 ```
 
+heartrate seconds
 
+``` SQL
+SELECT * FROM heartrate_seconds_merged
+WHERE 
+"Id" IS NULL
+OR
+"Time" IS NULL
+OR
+"Value" IS NULL
+```
+```SQL
+ALTER TABLE heartrate_seconds_merged
+RENAME COLUMN "Value" TO "Heartrate"
+```
 
+HourlyData
+
+``` SQL
+CREATE TABLE hourlydata
+(
+	"Id" BIGINT,
+    "ActivityHour" TIMESTAMP,
+    "Calories" INT,
+    "TotalIntensity" NUMERIC,
+    "AverageIntensity" NUMERIC,
+    "StepTotal" INT
+);
+```
+Joining
+
+``` SQL
+INSERT INTO hourlydata
+SELECT hcal."Id", hcal."ActivityHour", "Calories", "TotalIntensity", "AverageIntensity", "StepTotal"
+FROM hourlycalories_merged AS hcal
+FULL OUTER JOIN hourlyintensities_merged AS hint
+ON hcal."Id" = hint."Id"
+AND hcal."ActivityHour" = hint."ActivityHour"
+FULL OUTER JOIN hourlysteps_merged AS hste
+ON hcal."Id" = hste."Id"
+AND hcal."ActivityHour" = hste."ActivityHour"
 # Analyze & Share
+```
+
+MinuteData
+
+``` SQL
+CREATE TABLE minutedata
+(
+	"Id" BIGINT,
+    "ActivityMinute" TIMESTAMP,
+    "Calories" NUMERIC,
+    "Intensity" NUMERIC,
+    "METs" INT,
+    "Steps" INT
+);	
+```
+```SQL
+INSERT INTO minutedata
+SELECT mcal."Id", mcal."ActivityMinute", "Calories", "Intensity", "METs", "Steps"
+FROM minutecaloriesnarrow_merged AS mcal
+FULL OUTER JOIN minuteintensitiesnarrow_merged AS mint
+ON mcal."Id" = mint."Id"
+AND mcal."ActivityMinute" = mint."ActivityMinute"
+FULL OUTER JOIN public.minutemetsnarrow_merged AS met
+ON mcal."Id" = met."Id"
+AND mcal."ActivityMinute" = met."ActivityMinute"
+FULL OUTER JOIN minutestepsnarrow_merged AS mste
+ON mcal."Id" = mste."Id"
+AND mcal."ActivityMinute" = mste."ActivityMinute"
+
+
+
+SELECT DISTINCT * 
+FROM minutedata
+;
+
+
+SELECT * FROM minutedata
+WHERE 
+"Id" IS NULL
+OR
+"ActivityMinute" IS NULL
+OR
+"Calories" IS NULL
+OR
+"Intensity" IS NULL
+OR
+"METs" IS NULL
+OR
+"Steps" IS NULL
+;
+```
+
 
 The Data has been analyzed and visualized in Tableau  
 Interactive versions are available at links below
