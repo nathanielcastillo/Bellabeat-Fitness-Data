@@ -18,25 +18,28 @@ Links to Tableau visualizations
 
 # Introduction
 
-Cyclistic is a bike-share company in Chicago. The director of marketing believes the company’s future success depends on maximizing the number of annual memberships.
-Therefore, your team wants to understand how casual riders and annual members use Cyclistic bikes differently.
-From these insights, your team will design a new marketing strategy to convert casual riders into annual members.
-But first, Cyclistic executives must approve your recommendations, so they must be backed up with compelling data insights and professional data visualizations.
+Bellabeat is a high-tech manufacturer of health-focused products for women. Bellabeat is a small company, but they have potential to become a larger player in the global smart device market. The CEO believes that analyzing smart device fitness data could help umlock new growth oppurtunites for the company.
+
+You have been asked to focus on one of Bellabeat’s products and analyze small device data to gain insight into how consumers are using their small devices. The insights you discover will then help guide marketing strategy for the company. You will present your analysis to the Bellabeat executive team along with your high-level recommendations for Bellabeat’s marketing strategy.
+
+You are a junior data analyst working on the marketing analyst team at Bellabeat, a high-tech manufacturer of health-focused products for women. Bellabeat is a successful small company, but they have the potential to become a larger player in the global small device market. Urška Sršen, cofounder and Chief Creative Ocer of Bellabeat, believes that analyzing small device fitness data could help unlock new growth opportunities for the company. You have been asked to focus on one of Bellabeat’s products and analyze small device data to gain insight into how consumers are using their small devices. The insights you discover will then help guide marketing strategy for the company. You will present your analysis to the Bellabeat executive team along with your high-level recommendations for Bellabeat’s marketing strategy. 
 
 # Ask
 ### Main Business Task
 
-* Analyze how members and casual riders use Cyclistic bikes differently. 
+* Analyze trends in smart device usage. 
 
-* Provide recomendations to convert casual riders into annual members based on the findings.
+* Share how these trends apply to Bellabeat customers.
+
+* Share how these trends could help influence Bellabeat marketing strategy 
 
 ### Stakeholders
 
-* Lily Moreno: Director of marketing 
+* Urška Sršen: Bellabeat’s cofounder and Chief Creative Officer 
 
-* Cyclistic Executive Team: Team that will decide whether to approve the recomended marketing program
+* Sando Mur: Mathematician and Bellabeat’s cofounder; key member of the Bellabeat executive team 
 
-* Cyclistic Marketing Analytics Team: Team of data analysts responsible for guiding Cyclistic marketing strategy
+* Bellabeat marketing analytics team: A team of data analysts responsible for collecting, analyzing, and repoing data that helps guide Bellabeat’s marketing strategy. You joined this team six months ago and have been busy learning about Bellabeat’’s mission and business goals — as well as how you, as a junior data analyst, can help Bellabeat achieve them. 
 
 # Prepare
 ### Data Source
