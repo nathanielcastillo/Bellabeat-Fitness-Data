@@ -343,6 +343,31 @@ OR
 ;
 ```
 
+```SQL
+SELECT * FROM public.minutesleep_merged
+WHERE 
+"Id" IS NULL 
+OR
+"date" IS NULL 
+OR
+"value" IS NULL 
+OR
+"logId" IS NULL 
+;
+```
+```SQL
+ALTER TABLE public.minutesleep_merged
+RENAME COLUMN "date" TO "Date"
+;
+ALTER TABLE public.minutesleep_merged
+RENAME COLUMN "value" TO "SleepMinutes"
+;
+ALTER TABLE public.minutesleep_merged
+RENAME COLUMN "logId" TO "SleeplogId"
+;
+```
+
+
 
 The Data has been analyzed and visualized in Tableau  
 Interactive versions are available at links below
