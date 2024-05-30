@@ -38,15 +38,13 @@ Bellabeat is a high-tech manufacturer of health-focused products for women. Bell
 Data is downloaded from https://www.kaggle.com/datasets/arashnic/fitbit
 Fitness data is spread out across 11 different CSVs
 
-Data does not fully pass the ROCC method
+Data does not pass the ROCC method
 
-The sample size is too small
-
-- [ ] Reliable - Low Sample Size,   
-- [x] Original - 
-- [x] Comprehensive - 
-- [x] Current - 
-- [x] Cited - 
+- [ ] Reliable - Low Sample Size, 30 eligible FitBit users that responded to survey, data is from Amazon Mechanical Turk which relies on crowdsourcing work
+- [ ] Original - 3rd party data source, not validated
+- [ ] Comprehensive - Data only ranges 2 months from 3/12 to 5/12, not extensive enough
+- [ ] Current - Data is from 2016, not current enough for the year 2024
+- [ ] Cited - Not cited, relies on crowdsourced data
 
 The 11 CSVs of data will be used
 
