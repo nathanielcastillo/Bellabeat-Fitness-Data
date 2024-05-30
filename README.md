@@ -49,17 +49,17 @@ Data is from Amazon Mechanical Turk which relies on crowdsourcing work
 
 The 11 CSVs of data will be used
 
-dailyActivity_merged.csv 
-heartrate_seconds_merged.csv 
-hourlyCalories_merged.csv 
-hourlyIntensities_merged.csv 
-hourlySteps.csv_merged 
-minuteCaloriesNarrow.csv_merged 
-minuteIntensititesNarrow.csv_merged 
-minutesMETsNarrow_merged 
-minuteSleep_merged   
-minuteStepsNarrow_merged.csv 
-weightLogInfo_merged.csv 
+dailyActivity_merged.csv   
+heartrate_seconds_merged.csv   
+hourlyCalories_merged.csv   
+hourlyIntensities_merged.csv   
+hourlySteps.csv_merged   
+minuteCaloriesNarrow.csv_merged   
+minuteIntensititesNarrow.csv_merged   
+minutesMETsNarrow_merged   
+minuteSleep_merged     
+minuteStepsNarrow_merged.csv   
+weightLogInfo_merged.csv   
 
 # Process
 ### Data Cleaning Tools
