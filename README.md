@@ -40,7 +40,8 @@ Fitness data is spread out across 11 different CSVs
 
 Data does not pass the ROCC method
 
-- [ ] Reliable - Low Sample Size, 30 eligible FitBit users that responded to survey, data is from Amazon Mechanical Turk which relies on crowdsourcing work
+- [ ] Reliable - Low Sample Size, 30 eligible FitBit users that responded to survey  
+Data is from Amazon Mechanical Turk which relies on crowdsourcing work
 - [ ] Original - 3rd party data source, not validated
 - [ ] Comprehensive - Data only ranges 2 months from 3/12 to 5/12, not extensive enough
 - [ ] Current - Data is from 2016, not current enough for the year 2024
