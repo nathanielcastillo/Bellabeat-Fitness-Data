@@ -62,9 +62,6 @@ minuteStepsNarrow_merged.csv
 weightLogInfo_merged.csv   
 
 # Process
-### Data Cleaning Tools
-
-PostgreSQL will be used for data cleaning
 
 ### Creating Tables
 
@@ -155,9 +152,9 @@ CREATE TABLE weightLogInfo_merged (
 );	
 ```
 
-## Daily Activity 
+## DailyActivity 
 
-Checking for NULL
+NULL Check
 
 ``` SQL
 SELECT * FROM dailyactivity_merged 
@@ -226,7 +223,7 @@ RENAME COLUMN "FairlyActiveMinutes" TO "ModeratelyActiveMinutes"
 ;
 ```
 
-Adding a Total Minutes Columns 
+Adding Total Minutes Columns 
 
 ``` SQL
 ALTER TABLE dailyactivity_merged
@@ -253,9 +250,9 @@ UPDATE dailyactivity_merged
 ;
 ```
 
-## Heartrate Data
+## HeartrateData
 
-Checking for NULL values
+NULL Check
 
 ``` SQL
 SELECT * FROM heartrate_seconds_merged
@@ -276,7 +273,7 @@ RENAME COLUMN "Value" TO "Heartrate"
 
 ## HourlyData
 
-Checking for NULL values
+Creating hourly data table for JOINS
 
 ``` SQL
 CREATE TABLE hourlydata
@@ -304,7 +301,12 @@ AND hcal."ActivityHour" = hste."ActivityHour"
 # Analyze & Share
 ```
 
-MinuteData
+NULL Check
+
+
+## MinuteData
+
+Creating minute data table for JOJNS
 
 ``` SQL
 CREATE TABLE minutedata
@@ -317,6 +319,7 @@ CREATE TABLE minutedata
     "Steps" INT
 );	
 ```
+
 ```SQL
 INSERT INTO minutedata
 SELECT mcal."Id", mcal."ActivityMinute", "Calories", "Intensity", "METs", "Steps"
@@ -330,29 +333,12 @@ AND mcal."ActivityMinute" = met."ActivityMinute"
 FULL OUTER JOIN minutestepsnarrow_merged AS mste
 ON mcal."Id" = mste."Id"
 AND mcal."ActivityMinute" = mste."ActivityMinute"
-
-
-
-SELECT DISTINCT * 
-FROM minutedata
-;
-
-
-SELECT * FROM minutedata
-WHERE 
-"Id" IS NULL
-OR
-"ActivityMinute" IS NULL
-OR
-"Calories" IS NULL
-OR
-"Intensity" IS NULL
-OR
-"METs" IS NULL
-OR
-"Steps" IS NULL
-;
 ```
+
+
+## SleepData
+
+NULL Check
 
 ```SQL
 SELECT * FROM minutesleep_merged
@@ -366,6 +352,9 @@ OR
 "logId" IS NULL 
 ;
 ```
+
+Standardizing and renaming columns
+
 ```SQL
 ALTER TABLE minutesleep_merged
 RENAME COLUMN "date" TO "Date"
@@ -377,6 +366,9 @@ ALTER TABLE minutesleep_merged
 RENAME COLUMN "logId" TO "SleeplogId"
 ;
 ```
+
+## Weightlog
+
 ```SQL
 SELECT * FROM weightloginfo_merged
 WHERE 
@@ -397,10 +389,6 @@ OR
 "LogId" IS NULL
 ;
 ```
-
-ALTER TABLE public.minutesleep_merged
-RENAME COLUMN "date" TO "Date"
-
 
 # Analyze
 
