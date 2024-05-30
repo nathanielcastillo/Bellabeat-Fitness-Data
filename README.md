@@ -135,13 +135,13 @@ CREATE TABLE minuteSleep_merged (
 	"date" TIMESTAMP,
 	"value" INT,
 	"logId" BIGINT
-	);
+);
 
 CREATE TABLE minuteStepsNarrow_merged (
 	"Id" BIGINT,
 	"ActivityMinute" TIMESTAMP,
 	"Steps" INT
-	);
+);
 
 CREATE TABLE weightLogInfo_merged (
 	"Id" BIGINT,
@@ -152,10 +152,12 @@ CREATE TABLE weightLogInfo_merged (
 	"BMI" NUMERIC,	
 	"IsManualReport" VARCHAR(255),
 	"LogId" BIGINT
-	);	
+);	
 ```
 
-## Checking for NULL or Blank values
+## Daily Activity 
+
+Checking for NULL
 
 ``` SQL
 SELECT * FROM dailyactivity_merged 
@@ -192,7 +194,7 @@ OR
 ;
 ```
 
-Renaming Columns to add units of measure standardize
+Standardizing column names and adding unit of measure
 
 ``` SQL
 ALTER TABLE dailyactivity_merged
@@ -237,20 +239,23 @@ UPDATE dailyactivity_merged
 ;
 ```
 
-Recalculating the total distance column
+Recalculating the total distance column  
+There is a discrepancy between the TotalDistance Column and the sum of the distances, so the column is recalculated 
 
 ``` SQL
-
 SELECT *, "LightlyActiveDistanceKm" + "ModeratelyActiveDistanceKm" + "VeryActiveDistanceKm" + "SedentaryDistanceKm" AS "TotalDistanceCheck"
 FROM dailyactivity_merged
 ;	
 
 UPDATE dailyactivity_merged
 	SET 
-	"TotalDistanceKm" = "LightlyActiveDistanceKm" + "ModeratelyActiveDistanceKm" + "VeryActiveDistanceKm" + "SedentaryDistanceKm";
+	"TotalDistanceKm" = "LightlyActiveDistanceKm" + "ModeratelyActiveDistanceKm" + "VeryActiveDistanceKm" + "SedentaryDistanceKm"
+;
 ```
 
-heartrate seconds
+## Heartrate Data
+
+Checking for NULL values
 
 ``` SQL
 SELECT * FROM heartrate_seconds_merged
@@ -261,12 +266,17 @@ OR
 OR
 "Value" IS NULL
 ```
+
+Renaming "Value" to "Heartrate"
+
 ```SQL
 ALTER TABLE heartrate_seconds_merged
 RENAME COLUMN "Value" TO "Heartrate"
 ```
 
-HourlyData
+## HourlyData
+
+Checking for NULL values
 
 ``` SQL
 CREATE TABLE hourlydata
