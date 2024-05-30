@@ -53,11 +53,11 @@ dailyActivity_merged.csv
 heartrate_seconds_merged.csv   
 hourlyCalories_merged.csv   
 hourlyIntensities_merged.csv   
-hourlySteps.csv_merged   
-minuteCaloriesNarrow.csv_merged   
-minuteIntensititesNarrow.csv_merged   
-minutesMETsNarrow_merged   
-minuteSleep_merged     
+hourlySteps_merged.csv   
+minuteCaloriesNarrow_merged.csv   
+minuteIntensititesNarrow_merged.csv   
+minutesMETsNarrow_merged.csv   
+minuteSleep_merged.csv     
 minuteStepsNarrow_merged.csv   
 weightLogInfo_merged.csv   
 
@@ -273,11 +273,16 @@ RENAME COLUMN "Value" TO "Heartrate"
 
 ## HourlyData
 
-Creating hourly data table for JOINS
+Three tables will be joined 
+
+hourlyCalories_merged  
+hourlyIntensities_merged  
+hourlySteps._merged     
+
+Creating hourlydata table for JOINS  
 
 ``` SQL
-CREATE TABLE hourlydata
-(
+CREATE TABLE hourlydata (
 	"Id" BIGINT,
     "ActivityHour" TIMESTAMP,
     "Calories" INT,
@@ -286,7 +291,7 @@ CREATE TABLE hourlydata
     "StepTotal" INT
 );
 ```
-Joining
+Joining on column "Id" and Inserting to hourlydata table 
 
 ``` SQL
 INSERT INTO hourlydata
@@ -298,19 +303,38 @@ AND hcal."ActivityHour" = hint."ActivityHour"
 FULL OUTER JOIN hourlysteps_merged AS hste
 ON hcal."Id" = hste."Id"
 AND hcal."ActivityHour" = hste."ActivityHour"
-# Analyze & Share
 ```
 
 NULL Check
 
+```SQL
+SELECT * FROM hourlydata
+WHERE 
+"Id" IS NULL 
+OR
+"ActivityHour" IS NULL 
+OR
+"Calories" IS NULL 
+OR
+"TotalIntensity" IS NULL 
+OR
+"AverageIntensity" IS NULL 
+OR
+"StepTotal" IS NULL 
+;
+```
 
 ## MinuteData
 
-Creating minute data table for JOJNS
+4 tables will be joined
+
+minuteCaloriesNarrow_merged.csv   
+minuteIntensititesNarrow_merged.csv   
+minutesMETsNarrow_merged.csv   
+minuteStepsNarrow_merged.csv   
 
 ``` SQL
-CREATE TABLE minutedata
-(
+CREATE TABLE minutedata (
 	"Id" BIGINT,
     "ActivityMinute" TIMESTAMP,
     "Calories" NUMERIC,
@@ -319,6 +343,7 @@ CREATE TABLE minutedata
     "Steps" INT
 );	
 ```
+Joining on column "Id" and Inserting to minutedata table 
 
 ```SQL
 INSERT INTO minutedata
@@ -335,6 +360,24 @@ ON mcal."Id" = mste."Id"
 AND mcal."ActivityMinute" = mste."ActivityMinute"
 ```
 
+NULL Check
+
+``` SQL
+SELECT * FROM minutedata
+WHERE 
+"Id" IS NULL
+OR
+"ActivityMinute" IS NULL
+OR
+"Calories" IS NULL
+OR
+"Intensity" IS NULL
+OR
+"METs" IS NULL
+OR
+"Steps" IS NULL
+;
+```
 
 ## SleepData
 
@@ -352,7 +395,6 @@ OR
 "logId" IS NULL 
 ;
 ```
-
 Standardizing and renaming columns
 
 ```SQL
