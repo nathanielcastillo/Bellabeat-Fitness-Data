@@ -35,7 +35,7 @@ Bellabeat is a high-tech manufacturer of health-focused products for women. Bell
 # Prepare
 ### Data Source
 
-Data is downloaded from https://www.kaggle.com/datasets/arashnic/fitbit
+Data is downloaded from https://www.kaggle.com/datasets/arashnic/fitbit  
 Fitness data is spread out across 11 different CSVs
 
 Data does not pass the ROCC method
