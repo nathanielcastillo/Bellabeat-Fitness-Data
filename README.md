@@ -479,11 +479,11 @@ Since average
 ![
 ](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Average%20Weightlog.png)
 
-## Calories Burned Fitness Correaltions
+## Calories Burned Fitness Correlations
 ![
 ](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Calories%20Burned%20Fitness%20Correlations.png)
 
-## Calories Burned Activity Type Correaltions
+## Calories Burned Activity Type Correlations
 ![
 ](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Calories%20Burned%20Activity%20Type%20Correlations.png)
 
