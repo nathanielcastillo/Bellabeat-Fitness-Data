@@ -383,8 +383,6 @@ OR
 
 ## SleepData
 
-Standardizing and renaming columns
-
 NULL Check
 
 ```SQL
@@ -400,6 +398,8 @@ OR
 ;
 ```
 
+Standardizing and renaming columns
+
 ```SQL
 ALTER TABLE minutesleep_merged
 RENAME COLUMN "date" TO "Date"
@@ -413,8 +413,6 @@ RENAME COLUMN "logId" TO "SleeplogId"
 ```
 
 ## Weightlog
-
-Renaming "LogId" to "WeightLogId"
 
 NULL Check 
 
@@ -438,6 +436,8 @@ OR
 "LogId" IS NULL
 ;
 ```
+
+Renaming "LogId" to "WeightLogId"
 
 ```SQL
 ALTER TABLE weightloginfo_merged
