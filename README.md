@@ -455,14 +455,7 @@ RENAME COLUMN "logId" TO "WeightlogId"
 
 ### Top 3 Recommendations to convert Casual Riders to Annual Members
 
-1. During the Summer Months, offer a discount on the annual membership
-Since summer are busiest months, casual riders may opt to purchase an annual membership if they plan on riding a lot during the summer
 
-2. Display advertising in & around popular casual stations
-Popular casual stations such as Streeter Dr/Grand Ave and DuSable Lake Shore Dr/Monroe St offer high visibility to casual riders
-
-3. Increase casual price during the weekends to incentivize membership purchases
-Since weekends are the most popular casual days, casual riders may opt for an annual membership if the daily prices are going to be higher on the weekends
 
 
 
