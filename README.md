@@ -385,6 +385,21 @@ OR
 
 Standardizing and renaming columns
 
+NULL Check
+
+```SQL
+SELECT * FROM minutesleep_merged
+WHERE 
+"Id" IS NULL 
+OR
+"date" IS NULL 
+OR
+"value" IS NULL 
+OR
+"logId" IS NULL 
+;
+```
+
 ```SQL
 ALTER TABLE minutesleep_merged
 RENAME COLUMN "date" TO "Date"
@@ -397,30 +412,9 @@ RENAME COLUMN "logId" TO "SleeplogId"
 ;
 ```
 
-NULL Check
-
-```SQL
-SELECT * FROM minutesleep_merged
-WHERE 
-"Id" IS NULL 
-OR
-"Date" IS NULL 
-OR
-"SleepMinutes" IS NULL 
-OR
-"SleeplogId" IS NULL 
-;
-```
-
 ## Weightlog
 
 Renaming "LogId" to "WeightLogId"
-
-```SQL
-ALTER TABLE weightloginfo_merged
-RENAME COLUMN "logId" TO "WeightlogId"
-;
-```
 
 NULL Check 
 
@@ -445,6 +439,11 @@ OR
 ;
 ```
 
+```SQL
+ALTER TABLE weightloginfo_merged
+RENAME COLUMN "logId" TO "WeightlogId"
+;
+```
 # Analyze
 
 ![
