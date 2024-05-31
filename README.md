@@ -446,40 +446,48 @@ RENAME COLUMN "logId" TO "WeightlogId"
 ```
 # Analyze
 
-Daily Activity Minutes Percentage 
+## Daily Activity Minutes Percentage 
 ![
 ](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Daily%20Active%20Minutes%20Percentage.png)
 
-Sleep Minutes Per Weekday
+More than 80% of a user's daily minutes is spent sedentary (including sleep)
+
+## Sleep Minutes Per Weekday
 ![
 ](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Sleep%20Minutes%20Per%20Weekday.png)
 
-Average Minutes Per Weekday
+Users sleep more than average on Sunday, Monday and Tuesday. Sleep less than average minutes on Wednesday, Thursday, Friday and Saturday  
+Average Sleep Minutes is 423
+
+## Average Minutes Per Weekday
 
 ![
 ](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Average%20Minutes%20Per%20Weekday.png)
 
-Fitness Time of Day
+Sedentary Minutes Range from 850 to 1055  
+Since average
+
+## Fitness Time of Day
 ![
 ](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Fitness%20Time%20of%20Day.png)
 
-Weight and BMI Distribution Per User
+## Weight and BMI Distribution Per User
 ![
 ](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Weight%20and%20BMI%20Distribution%20Per%20User.png)
 
-Average Weightlog
+## Average Weightlog
 ![
 ](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Average%20Weightlog.png)
 
-Calories Burned Fitness Correaltions
+## Calories Burned Fitness Correaltions
 ![
 ](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Calories%20Burned%20Fitness%20Correlations.png)
 
-Calories Burned Activity Type Correaltions
+## Calories Burned Activity Type Correaltions
 ![
 ](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Calories%20Burned%20Activity%20Type%20Correlations.png)
 
-Correlation Values
+## Correlation Values
 ![
 ](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Correlation%20Values.png)
 
