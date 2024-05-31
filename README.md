@@ -446,8 +446,42 @@ RENAME COLUMN "logId" TO "WeightlogId"
 ```
 # Analyze
 
+Daily Activity Minutes Percentage 
 ![
-](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Active%20Minutes%20Percentage.png)
+](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Daily%20Active%20Minutes%20Percentage.png)
+
+Sleep Minutes Per Weekday
+![
+](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Sleep%20Minutes%20Per%20Weekday.png)
+
+Average Minutes Per Weekday
+
+![
+](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Average%20Minutes%20Per%20Weekday.png)
+
+Fitness Time of Day
+![
+](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Fitness%20Time%20of%20Day.png)
+
+Weight and BMI Distribution Per User
+![
+](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Weight%20and%20BMI%20Distribution%20Per%20User.png)
+
+Average Weightlog
+![
+](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Average%20Weightlog.png)
+
+Calories Burned Fitness Correaltions
+![
+](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Calories%20Burned%20Fitness%20Correlations.png)
+
+Calories Burned Activity Type Correaltions
+![
+](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Calories%20Burned%20Activity%20Type%20Correlations.png)
+
+Correlation Values
+![
+](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Correlation%20Values.png)
 
 
 # Act
