@@ -13,7 +13,7 @@ Act
 
 # Scenario
 
-Bellabeat is a high-tech manufacturer of health-focused products for women. Bellabeat is a successful small company, but they have the potential to become a larger player in the global small device market. Urška Sršen, cofounder and Chief Creative Ocer of Bellabeat, believes that analyzing small device fitness data could help unlock new growth opportunities for the company. You have been asked to focus on one of Bellabeat’s products and analyze small device data to gain insight into how consumers are using their small devices. The insights you discover will then help guide marketing strategy for the company. You will present your analysis to the Bellabeat executive team along with your high-level recommendations for Bellabeat’s marketing strategy. 
+Bellabeat is a high-tech manufacturer of health-focused products for women. Bellabeat is a successful small company, but they have the potential to become a larger player in the global small device market. Urška Sršen, cofounder and Chief Creative Officer of Bellabeat, believes that analyzing small device fitness data could help unlock new growth opportunities for the company. You have been asked to focus on one of Bellabeat’s products and analyze small device data to gain insight into how consumers are using their small devices. The insights you discover will then help guide marketing strategy for the company. You will present your analysis to the Bellabeat executive team along with your high-level recommendations for Bellabeat’s marketing strategy. 
 
 ## Ask
 ### Main Business Task
@@ -279,7 +279,7 @@ hourlyCalories_merged
 hourlyIntensities_merged  
 hourlySteps._merged     
 
-Creating hourlydata table for JOINS  
+Creating hourlydata table to insert JOINS  
 
 ``` SQL
 CREATE TABLE hourlydata (
@@ -333,6 +333,8 @@ minuteIntensititesNarrow_merged.csv
 minutesMETsNarrow_merged.csv   
 minuteStepsNarrow_merged.csv   
 
+Creating minutedata table to insert JOINs
+
 ``` SQL
 CREATE TABLE minutedata (
 	"Id" BIGINT,
@@ -381,20 +383,6 @@ OR
 
 ## SleepData
 
-NULL Check
-
-```SQL
-SELECT * FROM minutesleep_merged
-WHERE 
-"Id" IS NULL 
-OR
-"date" IS NULL 
-OR
-"value" IS NULL 
-OR
-"logId" IS NULL 
-;
-```
 Standardizing and renaming columns
 
 ```SQL
@@ -409,7 +397,32 @@ RENAME COLUMN "logId" TO "SleeplogId"
 ;
 ```
 
+NULL Check
+
+```SQL
+SELECT * FROM minutesleep_merged
+WHERE 
+"Id" IS NULL 
+OR
+"Date" IS NULL 
+OR
+"SleepMinutes" IS NULL 
+OR
+"SleeplogId" IS NULL 
+;
+```
+
 ## Weightlog
+
+Renaming "LogId" to "WeightLogId"
+
+```SQL
+ALTER TABLE weightloginfo_merged
+RENAME COLUMN "logId" TO "WeightlogId"
+;
+```
+
+NULL Check 
 
 ```SQL
 SELECT * FROM weightloginfo_merged
