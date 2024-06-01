@@ -191,6 +191,9 @@ OR
 OR
 "Calories" IS NULL
 ;
+
+--No NULLs returned
+
 ```
 
 ``` SQL
@@ -226,9 +229,11 @@ RENAME COLUMN "FairlyActiveMinutes" TO "ModeratelyActiveMinutes"
 ;
 ```
 
-Adding Total Minutes Columns 
 
 ``` SQL
+
+-- Adding Total Minutes Columns 
+
 ALTER TABLE dailyactivity_merged
 ADD COLUMN "TotalMinutes" INT 
 ;
@@ -239,10 +244,11 @@ UPDATE dailyactivity_merged
 ;
 ```
 
-Recalculating the total distance column  
-There is a discrepancy between the TotalDistance Column and the sum of the distances, so the column is recalculated 
-
 ``` SQL
+
+-- There is a discrepancy between the TotalDistance Column and the calculated sum of the distances
+-- Recalculating the total distance column and updating
+
 SELECT *, "LightlyActiveDistanceKm" + "ModeratelyActiveDistanceKm" + "VeryActiveDistanceKm" + "SedentaryDistanceKm" AS "TotalDistanceCheck"
 FROM dailyactivity_merged
 ;	
