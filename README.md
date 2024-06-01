@@ -532,7 +532,7 @@ So during lunch hours and after work hours
 Over a 12 day period the average BMI decreased by 4.49 and average weight decreased by 6.18 pounds,  
 however the sample size is too small for the results to be conclusive 
 
-## Calories Burned Correlations
+## Calories Burned Scatter Plots
 ![
 ](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Calories%20Burned%20Fitness%20Correlations.png)
 
