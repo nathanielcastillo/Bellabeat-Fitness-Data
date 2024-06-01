@@ -550,11 +550,16 @@ The Avg Intensity value has the strongest and most reliable correlation to Calor
 
 Very Active Mins is the Activity Type that has the strongest and most reliable correlation to Calories Burned
 
-Users who wish to burn the most calories can try increasing their step total, their very active minutes and high average intensity activities  
+Users who wish to burn the most calories can try increasing their very active minutes, high average intensity activities and step total  
 However it is important to note that correlation does not imply causation  
-There may be other factors that are influencing the amount of calories burned.
+There may be other factors that are influencing the amount of calories burned
 
 # Share
+
+The Data has been analyzed and visualized in Tableau  
+
+[Dashboard
+](https://public.tableau.com/views/BellabeatDashboard_17171734796480/BellaBeatDashboard?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
 
 # Act
 ## Recommendations
