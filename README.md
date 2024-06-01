@@ -520,14 +520,17 @@ So during lunch hours and after work hours
 ![
 ](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Weight%20and%20BMI%20Distribution%20Per%20User.png)
 
+|            | Min   | Max   | Avg   |
+|------------|-------|-------|-------|
+| BMI        | 21.55 | 46.17 | 28    |
+| Weight Lbs | 117.5 | 285.7 | 175.6 |
+
 ## Average Weightlog
 ![
 ](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Average%20Weightlog.png)
 
-|            | Min | Max | Avg |
-|------------|-----|-----|-----|
-| BMI        |     |     |     |
-| Weight Lbs |     |     |     |
+Over a 12 day period the average BMI decreased by 4.49 and average weight decreased by 6.18 pounds,  
+however the sample size is too small for the results to be conclusive 
 
 ## Calories Burned Fitness Correlations
 ![
