@@ -2,14 +2,14 @@
 
 ## A Data Analysis Case Study using Excel, SQL and Tableau
 
-THE APPASA method
+This Case Study will follow the APPASA format  
 
-### [Ask](#ask)
-Prepare  
-Process  
-Analyze  
-Share  
-Act  
+### [1. Ask](#ask)  
+### [2. Prepare](#prepare)  
+### [3. Process](#process)  
+### [4. Analyze](#analyze)  
+### [5. Share](#share)  
+### [6. Act](#act) 
 
 # Scenario
 
@@ -553,6 +553,8 @@ Very Active Mins is the Activity Type that has the strongest and most reliable c
 Users who wish to burn the most calories can try increasing their step total, their very active minutes and high average intensity activities  
 However it is important to note that correlation does not imply causation  
 There may be other factors that are influencing the amount of calories burned.
+
+# Share
 
 # Act
 ## Recommendations
