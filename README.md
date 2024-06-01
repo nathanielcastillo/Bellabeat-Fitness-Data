@@ -321,6 +321,7 @@ AND hcal."ActivityHour" = hint."ActivityHour"
 FULL OUTER JOIN hourlysteps_merged AS hste
 ON hcal."Id" = hste."Id"
 AND hcal."ActivityHour" = hste."ActivityHour"
+;
 ```
 
 ```SQL
@@ -388,6 +389,7 @@ AND mcal."ActivityMinute" = met."ActivityMinute"
 FULL OUTER JOIN minutestepsnarrow_merged AS mste
 ON mcal."Id" = mste."Id"
 AND mcal."ActivityMinute" = mste."ActivityMinute"
+;
 ```
 
 ``` SQL
