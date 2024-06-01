@@ -341,6 +341,9 @@ OR
 OR
 "StepTotal" IS NULL 
 ;
+
+-- No NULLs returned
+
 ```
 
 ## MinuteData
@@ -405,6 +408,9 @@ OR
 OR
 "Steps" IS NULL
 ;
+
+-- No NULLs returned
+
 ```
 
 ## SleepData
@@ -423,6 +429,9 @@ OR
 OR
 "logId" IS NULL 
 ;
+
+-- No NULLs returned
+
 ```
 
 ```SQL
@@ -464,6 +473,9 @@ OR
 OR
 "LogId" IS NULL
 ;
+
+-- No NULLs returned
+
 ```
 
 ```SQL
