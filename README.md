@@ -246,12 +246,13 @@ UPDATE dailyactivity_merged
 
 ``` SQL
 
--- There is a discrepancy between the TotalDistance Column and the calculated sum of the distances
--- Recalculating the total distance column and updating
+-- There is a discrepancy between the TotalDistance Column vs the calculated sum of the distances
 
 SELECT *, "LightlyActiveDistanceKm" + "ModeratelyActiveDistanceKm" + "VeryActiveDistanceKm" + "SedentaryDistanceKm" AS "TotalDistanceCheck"
 FROM dailyactivity_merged
 ;	
+
+-- Recalculating the total distance column and updating
 
 UPDATE dailyactivity_merged
 	SET 
@@ -261,9 +262,10 @@ UPDATE dailyactivity_merged
 
 ## HeartrateData
 
-NULL Check
-
 ``` SQL
+
+-- NULL Check
+
 SELECT * FROM heartrate_seconds_merged
 WHERE 
 "Id" IS NULL
@@ -271,11 +273,15 @@ OR
 "Time" IS NULL
 OR
 "Value" IS NULL
+
+-- No NULLs returned
+
 ```
 
-Renaming "Value" to "Heartrate"
-
 ```SQL
+
+-- Renaming "Value" to "Heartrate"
+
 ALTER TABLE heartrate_seconds_merged
 RENAME COLUMN "Value" TO "Heartrate"
 ```
@@ -288,9 +294,10 @@ hourlyCalories_merged
 hourlyIntensities_merged  
 hourlySteps._merged     
 
-Creating hourlydata table to insert JOINS  
-
 ``` SQL
+
+-- Creating hourlydata table to insert JOINS
+
 CREATE TABLE hourlydata (
 	"Id" BIGINT,
     "ActivityHour" TIMESTAMP,
@@ -300,9 +307,11 @@ CREATE TABLE hourlydata (
     "StepTotal" INT
 );
 ```
-Joining on column "Id" and Inserting to hourlydata table 
 
 ``` SQL
+
+-- Joining on column "Id" and Inserting to hourlydata table
+
 INSERT INTO hourlydata
 SELECT hcal."Id", hcal."ActivityHour", "Calories", "TotalIntensity", "AverageIntensity", "StepTotal"
 FROM hourlycalories_merged AS hcal
@@ -314,9 +323,10 @@ ON hcal."Id" = hste."Id"
 AND hcal."ActivityHour" = hste."ActivityHour"
 ```
 
-NULL Check
-
 ```SQL
+
+-- NULL Check
+
 SELECT * FROM hourlydata
 WHERE 
 "Id" IS NULL 
@@ -337,14 +347,17 @@ OR
 
 4 tables will be joined
 
-minuteCaloriesNarrow_merged.csv   
-minuteIntensititesNarrow_merged.csv   
-minutesMETsNarrow_merged.csv   
-minuteStepsNarrow_merged.csv   
+minuteCaloriesNarrow_merged
+minuteIntensititesNarrow_merged  
+minutesMETsNarrow_merged
+minuteStepsNarrow_merged
 
-Creating minutedata table to insert JOINs
+
 
 ``` SQL
+
+-- Creating minutedata table to insert JOINs
+
 CREATE TABLE minutedata (
 	"Id" BIGINT,
     "ActivityMinute" TIMESTAMP,
@@ -354,9 +367,12 @@ CREATE TABLE minutedata (
     "Steps" INT
 );	
 ```
-Joining on column "Id" and Inserting to minutedata table 
+ 
 
 ```SQL
+
+-- Joining on column "Id" and Inserting to minutedata table
+
 INSERT INTO minutedata
 SELECT mcal."Id", mcal."ActivityMinute", "Calories", "Intensity", "METs", "Steps"
 FROM minutecaloriesnarrow_merged AS mcal
@@ -371,9 +387,10 @@ ON mcal."Id" = mste."Id"
 AND mcal."ActivityMinute" = mste."ActivityMinute"
 ```
 
-NULL Check
-
 ``` SQL
+
+-- NULL Check
+
 SELECT * FROM minutedata
 WHERE 
 "Id" IS NULL
@@ -392,9 +409,10 @@ OR
 
 ## SleepData
 
-NULL Check
-
 ```SQL
+
+-- NULL Check
+
 SELECT * FROM minutesleep_merged
 WHERE 
 "Id" IS NULL 
@@ -407,9 +425,10 @@ OR
 ;
 ```
 
-Standardizing and renaming columns
-
 ```SQL
+
+-- Standardizing and renaming columns
+
 ALTER TABLE minutesleep_merged
 RENAME COLUMN "date" TO "Date"
 ;
@@ -423,9 +442,10 @@ RENAME COLUMN "logId" TO "SleeplogId"
 
 ## Weightlog
 
-NULL Check 
-
 ```SQL
+
+-- NULL Check
+
 SELECT * FROM weightloginfo_merged
 WHERE 
 "Id" IS NULL
@@ -446,9 +466,10 @@ OR
 ;
 ```
 
-Renaming "LogId" to "WeightLogId"
-
 ```SQL
+
+-- Renaming "LogId" to "WeightLogId"
+
 ALTER TABLE weightloginfo_merged
 RENAME COLUMN "logId" TO "WeightlogId"
 ;
