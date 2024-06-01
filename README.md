@@ -543,6 +543,10 @@ however the sample size is too small for the results to be conclusive
 ![
 ](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Correlation%20Values.png)
 
+The R value indicates how strong the correlation is from a scale of -1 to 1
+The R^2 value is one way to show how reliable the result is from a scale of 0 to 1
+
+
 
 # Act
 ## Recommendations
