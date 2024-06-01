@@ -543,10 +543,16 @@ however the sample size is too small for the results to be conclusive
 ![
 ](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Correlation%20Values.png)
 
-The R value indicates how strong the correlation is from a scale of -1 to 1
-The R^2 value is one way to show how reliable the result is from a scale of 0 to 1
+The R value indicates how strong the correlation is from a scale of -1 to 1  
+The R^2 value is one way to show how reliable the correlation is from a scale of 0 to 1
 
+The Avg Intensity value has the strongest and most reliable correlation to Calories Burned followed by Step Total  
 
+Very Active Mins is the Activity Type that has the strongest and most reliable correlation to Calories Burned
+
+Users who wish to burn the most calories can try increasing their step total, their very active minutes and high average intensity activities  
+However it is important to note that correlation does not imply causation  
+There may be other factors that are influencing the amount of calories burned.
 
 # Act
 ## Recommendations
