@@ -564,7 +564,7 @@ The Data has been analyzed and visualized in Tableau
 # Act
 ## Recommendations
 
-### Top 3 Recommendations to convert Casual Riders to Annual Members
+Since the sample size of the data is so small the first reccomendation would be to gather more reliable data so more effective analysis can take place.
 
 
 
