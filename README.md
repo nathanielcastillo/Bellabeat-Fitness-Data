@@ -22,7 +22,7 @@ Bellabeat is a high-tech manufacturer of health-focused products for women. Bell
 
 * Share how these trends apply to Bellabeat customers.
 
-* Share how these trends could help influence Bellabeat marketing strategy 
+* Share how these trends could help influence Bellabeat marketing strategy to increase growth
 
 ### Stakeholders
 
