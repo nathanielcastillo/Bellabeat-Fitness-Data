@@ -474,7 +474,7 @@ Sedentary Minutes not asleep range from 427 to 632
 ](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Fitness%20Time%20of%20Day.png)
 
 Heartrate, METs, Average Intesity and Step Total values peak around 12:00 PM and 7:00 PM  
-During Lunch Hours and After Work Hours
+So during lunch hours and after work hours
 
 ## Weight and BMI Distribution Per User
 ![
@@ -483,6 +483,11 @@ During Lunch Hours and After Work Hours
 ## Average Weightlog
 ![
 ](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Average%20Weightlog.png)
+
+|            | Min | Max | Avg |
+|------------|-----|-----|-----|
+| BMI        |     |     |     |
+| Weight Lbs |     |     |     |
 
 ## Calories Burned Fitness Correlations
 ![
