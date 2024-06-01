@@ -456,8 +456,9 @@ More than 80% of a user's daily minutes is spent sedentary (including sleep)
 ![
 ](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Sleep%20Minutes%20Per%20Weekday.png)
 
-Users sleep more than average on Sunday, Monday and Tuesday. Sleep less than average minutes on Wednesday, Thursday, Friday and Saturday  
-Average Sleep Minutes is 423
+Average Sleep Minutes is 423  
+Users sleep more than average on Sunday, Monday and Tuesday  
+Sleep less than average minutes on Wednesday, Thursday, Friday and Saturday  
 
 ## Average Minutes Per Weekday
 
@@ -465,11 +466,15 @@ Average Sleep Minutes is 423
 ](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Average%20Minutes%20Per%20Weekday.png)
 
 Sedentary Minutes Range from 850 to 1055  
-Since average
+Average Sleep Minutes is 423  
+Sedentary Minutes not asleep range from 427 to 632
 
 ## Fitness Time of Day
 ![
 ](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Fitness%20Time%20of%20Day.png)
+
+Heartrate, METs, Average Intesity and Step Total values peak around 12:00 PM and 7:00 PM  
+During Lunch Hours and After Work Hours
 
 ## Weight and BMI Distribution Per User
 ![
