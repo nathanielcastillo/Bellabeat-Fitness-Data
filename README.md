@@ -63,9 +63,10 @@ weightLogInfo_merged.csv
 
 # Process
 
-### Creating Tables
-
 ``` SQL
+
+-- Creating Tables
+
 CREATE TABLE dailyActivity_merged (
     "Id" BIGINT,
     "ActivityDate" TIMESTAMP,
@@ -154,9 +155,10 @@ CREATE TABLE weightLogInfo_merged (
 
 ## DailyActivity 
 
-NULL Check
-
 ``` SQL
+
+-- Null Check
+
 SELECT * FROM dailyactivity_merged 
 WHERE 
 "Id" IS NULL
@@ -191,9 +193,10 @@ OR
 ;
 ```
 
-Standardizing column names and adding unit of measure
-
 ``` SQL
+
+-- Standardizing column names and adding unit of measure
+
 ALTER TABLE dailyactivity_merged
 RENAME COLUMN "TotalDistance" TO "TotalDistanceKm"
 ;
