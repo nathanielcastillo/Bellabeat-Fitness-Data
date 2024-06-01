@@ -229,7 +229,6 @@ RENAME COLUMN "FairlyActiveMinutes" TO "ModeratelyActiveMinutes"
 ;
 ```
 
-
 ``` SQL
 
 -- Adding Total Minutes Columns 
@@ -246,13 +245,13 @@ UPDATE dailyactivity_merged
 
 ``` SQL
 
--- There is a discrepancy between the TotalDistance Column vs the calculated sum of the distances
+-- There is a discrepancy between the TotalDistanceKm Column vs the calculated sum of the distances
 
 SELECT *, "LightlyActiveDistanceKm" + "ModeratelyActiveDistanceKm" + "VeryActiveDistanceKm" + "SedentaryDistanceKm" AS "TotalDistanceCheck"
 FROM dailyactivity_merged
 ;	
 
--- Recalculating the total distance column and updating
+-- Updating TotalDistanceKm with recalculated value
 
 UPDATE dailyactivity_merged
 	SET 
@@ -351,12 +350,10 @@ OR
 
 4 tables will be joined
 
-minuteCaloriesNarrow_merged
+minuteCaloriesNarrow_merged  
 minuteIntensititesNarrow_merged  
-minutesMETsNarrow_merged
-minuteStepsNarrow_merged
-
-
+minutesMETsNarrow_merged  
+minuteStepsNarrow_merged  
 
 ``` SQL
 
@@ -371,7 +368,6 @@ CREATE TABLE minutedata (
     "Steps" INT
 );	
 ```
- 
 
 ```SQL
 
