@@ -287,7 +287,7 @@ RENAME COLUMN "Value" TO "Heartrate"
 
 ## HourlyData
 
-Three tables will be joined 
+3 tables will be joined 
 
 hourlyCalories_merged  
 hourlyIntensities_merged  
@@ -485,6 +485,11 @@ RENAME COLUMN "logId" TO "WeightlogId"
 ;
 ```
 # Analyze
+
+## Usage Statistics 
+
+![
+](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Usage%20Statistics.png)
 
 ## Daily Activity Minutes Percentage 
 ![
