@@ -572,7 +572,7 @@ The Data has been analyzed and visualized in Tableau
 # Act
 ## Recommendations
 
-### Top Recommendations to Increase Growth Based on Data
+### Markerting Recommendations to Increase Growth Based on Data
 
 1. Since the sample size and range of the data analyzed is so small, The first recommendation is to gather more reliable data so that more effective and reliable analysis can occur
 
