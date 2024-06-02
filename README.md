@@ -564,7 +564,15 @@ The Data has been analyzed and visualized in Tableau
 # Act
 ## Recommendations
 
-Since the sample size of the data is so small the first reccomendation would be to gather more reliable data so more effective analysis can take place.
+### Top Recommendations to Increase Growth
+
+1. Since the sample size and range of the data analyzed is so small. The first recommendation is to gather more reliable data so that effective analysis can occur
+
+2. Notify users when
+   
+4. Suggest Users
+
+
 
 
 
