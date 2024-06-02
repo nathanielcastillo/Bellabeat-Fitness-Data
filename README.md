@@ -580,7 +580,7 @@ The Data has been analyzed and visualized in Tableau
    
 3. Feature women of various weights in Bellabeat's advertising. The weight range of women in the data is 117.5 - 285.7, showcasing women of all different weights may appeal to the customers who share the same weight
 
-4. Showcase the product in use during lunch hours and afterwork hours as these are the times of day where fitness activites peak
+4. Showcase the product in use during lunch hours and afterwork hours as these are the times of day when fitness activites peak
 
 
 
