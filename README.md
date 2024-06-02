@@ -30,7 +30,7 @@ Bellabeat is a high-tech manufacturer of health-focused products for women. Bell
 
 * Sando Mur: Mathematician and Bellabeat’s cofounder; key member of the Bellabeat executive team 
 
-* Bellabeat marketing analytics team: A team of data analysts responsible for collecting, analyzing, and reporing data that helps guide Bellabeat’s marketing strategy.
+* Bellabeat marketing analytics team: A team of data analysts responsible for collecting, analyzing, and reporting data that helps guide Bellabeat’s marketing strategy.
 
 # Prepare
 ### Data Source
