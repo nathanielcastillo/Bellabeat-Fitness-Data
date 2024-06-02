@@ -491,6 +491,9 @@ RENAME COLUMN "logId" TO "WeightlogId"
 ![
 ](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Usage%20Statistics.png)
 
+Minute data are the most used functions in terms of Users and records of data collected
+Weightlog is the least used function in terms of users and records of data collected
+
 ## Daily Activity Minutes Percentage 
 ![
 ](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Daily%20Active%20Minutes%20Percentage.png)
@@ -571,7 +574,7 @@ The Data has been analyzed and visualized in Tableau
 
 ### Top Recommendations to Increase Growth
 
-1. Since the sample size and range of the data analyzed is so small. The first recommendation is to gather more reliable data so that effective analysis can occur
+1. Since the sample size and range of the data analyzed is so small, The first recommendation is to gather more reliable data so that more effective and reliable analysis can occur
 
 2. Notify users when
    
