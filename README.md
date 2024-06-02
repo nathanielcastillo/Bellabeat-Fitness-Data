@@ -508,7 +508,7 @@ Sleep less than average minutes on Wednesday, Thursday, Friday and Saturday
 ## Average Minutes Per Weekday
 
 ![
-](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Average%20Minutes%20Per%20Weekday.png)
+](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Activity%20Minutes%20Per%20Weekday.png)
 
 Sedentary Minutes Range from 850 to 1055  
 Average Sleep Minutes is 423  
