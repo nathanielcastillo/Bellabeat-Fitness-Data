@@ -517,8 +517,9 @@ Heartrate, METs, Average Intesity and Step Total values peak around 12:00 PM and
 So during lunch hours and after work hours
 
 ## Weight and BMI Distribution Per User
+
 ![
-](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Weight%20and%20BMI%20Distribution%20Per%20User.png)
+](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Weight%20Distribution%20Per%20User.png)
 
 |            | Min   | Max   | Avg   |
 |------------|-------|-------|-------|
