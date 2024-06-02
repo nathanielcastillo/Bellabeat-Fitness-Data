@@ -576,7 +576,7 @@ The Data has been analyzed and visualized in Tableau
 
 1. Since the sample size and range of the data analyzed is so small, The first recommendation is to gather more reliable data so that more effective and reliable analysis can occur
 
-2. Focus on marketing the minute tracking capabilities of Bellabeat products because minute tracking is the most used feature in the Fitbit data
+2. Focus on marketing the minute tracking capabilities of Bellabeat products because minute tracking is the most used feature in the Fitbit data. Shift marketing away from weightlog features since it is the least used 
    
 4. Suggest Users
 
