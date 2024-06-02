@@ -572,13 +572,15 @@ The Data has been analyzed and visualized in Tableau
 # Act
 ## Recommendations
 
-### Top Recommendations to Increase Growth
+### Top Recommendations to Increase Growth Based on Data
 
 1. Since the sample size and range of the data analyzed is so small, The first recommendation is to gather more reliable data so that more effective and reliable analysis can occur
 
 2. Focus on marketing the minute tracking capabilities of Bellabeat products because minute tracking is the most used feature in the Fitbit data. Shift marketing away from weightlog features since it is the least used 
    
 3. Feature women of various weights in Bellabeat's advertising. The weight range of women in the data is 117.5 - 285.7, showcasing women of all different weights may appeal to the customers who share the same weight
+
+4. 
 
 
 
