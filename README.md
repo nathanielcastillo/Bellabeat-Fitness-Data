@@ -528,22 +528,25 @@ So during lunch hours and after work hours
 
 |            | Min   | Max   | Avg   |
 |------------|-------|-------|-------|
-| BMI        | 21.55 | 46.17 | 28    |
 | Weight Lbs | 117.5 | 285.7 | 175.6 |
 
 ## Average Weightlog
 ![
 ](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Average%20Weightlog.png)
 
-Over a 12 day period the average BMI decreased by 4.49 and average weight decreased by 6.18 pounds,  
+Over a 12 day period the average weight decreased by 6.18 pounds,  
 however the sample size is too small for the results to be conclusive 
 
 ## Calories Burned Scatter Plots
 ![
 ](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Calories%20Burned%20Fitness%20Correlations.png)
 
+The Avg Intensity value has the strongest and most reliable correlation to Calories Burned followed by Step Total  
+
 ![
 ](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Calories%20Burned%20Activity%20Type%20Correlations.png)
+
+Very Active Mins is the Activity Type that has the strongest and most reliable correlation to Calories Burned
 
 ## Correlation Values
 ![
@@ -551,10 +554,6 @@ however the sample size is too small for the results to be conclusive
 
 The R value indicates how strong the correlation is from a scale of -1 to 1  
 The R^2 value is one way to show how reliable the correlation is from a scale of 0 to 1
-
-The Avg Intensity value has the strongest and most reliable correlation to Calories Burned followed by Step Total  
-
-Very Active Mins is the Activity Type that has the strongest and most reliable correlation to Calories Burned
 
 Users who wish to burn the most calories can try increasing their very active minutes, high average intensity activities and step total  
 However it is important to note that correlation does not imply causation  
