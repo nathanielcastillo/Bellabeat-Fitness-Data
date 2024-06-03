@@ -491,7 +491,7 @@ RENAME COLUMN "logId" TO "WeightlogId"
 ![
 ](https://github.com/nathanielcastillo/Bellabeat-Fitness-Data/blob/main/Images/Usage%20Statistics.png)
 
-Minute data are the most used functions in terms of Users and records of data collected
+Tracking minute data most is one of the most popular functions in terms of # of Users and rows of data collected  
 Weightlog is the least used function in terms of users and records of data collected
 
 ## Daily Activity Minutes Percentage 
