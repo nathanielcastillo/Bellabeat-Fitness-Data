@@ -11,6 +11,12 @@ This Case Study will follow the APPASA format
 ### [5. Share](#share)  
 ### [6. Act](#act) 
 
+[Tableau Dashboard
+](https://public.tableau.com/views/BellabeatDashboard_17171734796480/BellabeatDashboard?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
+
+[Tableau Presentation
+](https://public.tableau.com/views/WellnessAnalyticsShapingFitnessDatatoDriveBellabeatMarketingEfforts/BellabeatFitnessDataPresentation?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
+
 # Scenario
 
 Bellabeat is a high-tech manufacturer of health-focused products for women. Bellabeat is a successful small company, but they have the potential to become a larger player in the global small device market. Urška Sršen, cofounder and Chief Creative Officer of Bellabeat, believes that analyzing small device fitness data could help unlock new growth opportunities for the company. You have been asked to focus on one of Bellabeat’s products and analyze small device data to gain insight into how consumers are using their small devices. The insights you discover will then help guide marketing strategy for the company. You will present your analysis to the Bellabeat executive team along with your high-level recommendations for Bellabeat’s marketing strategy. 
