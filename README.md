@@ -572,8 +572,11 @@ There may be other factors that are influencing the amount of calories burned
 
 The Data has been analyzed and visualized in Tableau  
 
-[Dashboard
-](https://public.tableau.com/views/BellabeatDashboard_17171734796480/BellaBeatDashboard?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
+[Tableau Dashboard
+](https://public.tableau.com/views/BellabeatDashboard_17171734796480/BellabeatDashboard?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
+
+[Tableau Presentation
+](https://public.tableau.com/views/WellnessAnalyticsShapingFitnessDatatoDriveBellabeatMarketingEfforts/BellabeatFitnessDataPresentation?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
 
 # Act
 ## Recommendations
